@@ -14,11 +14,11 @@ body {
     color: #211A1E; }
 
 .hero-spacer {
-  background: linear-gradient(20deg, #D1D7EF, #5C61F5);
+  background: #8200ff;
   background-image: url("../images/building2.jpg");
   background-size: cover;
   background-position: center;
-  background-blend-mode: multiply;
+  background-blend-mode: darken;
   color: #F7FFF7;
   padding: 10px 0px; }
 .hero-title {
