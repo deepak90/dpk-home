@@ -13,7 +13,8 @@ class Cards extends Component {
                     <ul className="tags">
                         {this.props.tags.map(tag => <Tags
                             key={tag}
-                            title={tag} />)}
+                            title={tag} 
+                            filterCards={this.props.filterCards}/>)}
                     </ul>
 
                 </Thumbnail>
