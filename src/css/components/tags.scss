@@ -1,0 +1,53 @@
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden; 
+  padding: 0;
+  li {
+    float: left
+  }
+  .tag{
+    background: $body-bg;
+    border-radius: 3px 0 0 3px;
+    color: $black2;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 25px 0 10px;
+    position: relative;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    transition: color 0.2s;
+    text-transform: uppercase;
+    font-size: x-small;
+    &:before {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+      content: '';
+      height: 6px;
+      right: 8px;
+      position: absolute;
+      width: 6px;
+      top: 10px;
+    }
+    &:after {
+      background: #fff;
+      border-bottom: 13px solid transparent;
+      border-left: 10px solid $body-bg;
+      border-top: 13px solid transparent;
+      content: '';
+      position: absolute;
+      right: -9px;
+      top: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      background-color: $jet-purple;
+      color: #fff;
+      &::after {
+        border-left-color: $jet-purple; 
+      }
+    }
+  }
+}

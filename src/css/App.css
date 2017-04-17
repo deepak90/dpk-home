@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif; }
+
+.navbar {
+  margin-bottom: 0;
+  background: #6004BA;
+  border-radius: 0px; }
+  .navbar a {
+    color: #F7FFF7; }
+  .navbar li > a:hover, .navbar li > a:focus {
+    background: #F7FFF7;
+    color: #211A1E; }
+
+.hero-spacer {
+  background: linear-gradient(20deg, #D1D7EF, #5C61F5);
+  background-image: url("../images/building2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  color: #F7FFF7;
+  padding: 10px 0px; }
+.hero-title {
+  font-family: 'Pacifico', cursive; }
+
+.thumbnail {
+  padding: 0;
+  border-radius: 0px;
+  transition: all 0.25s linear;
+  max-height: 300px;
+  overflow: hidden; }
+  .thumbnail:hover {
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5); }
+
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0; }
+  .tags li {
+    float: left; }
+  .tags .tag {
+    background: #f6f7f8;
+    border-radius: 3px 0 0 3px;
+    color: #211A1E;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 25px 0 10px;
+    position: relative;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    transition: color 0.2s;
+    text-transform: uppercase;
+    font-size: x-small; }
+    .tags .tag:before {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+      content: '';
+      height: 6px;
+      right: 8px;
+      position: absolute;
+      width: 6px;
+      top: 10px; }
+    .tags .tag:after {
+      background: #fff;
+      border-bottom: 13px solid transparent;
+      border-left: 10px solid #f6f7f8;
+      border-top: 13px solid transparent;
+      content: '';
+      position: absolute;
+      right: -9px;
+      top: 0; }
+    .tags .tag:hover {
+      text-decoration: none;
+      background-color: #8200ff;
+      color: #fff; }
+      .tags .tag:hover::after {
+        border-left-color: #8200ff; }
+
+.btn-outline, .btn-outline-white, .btn-outline-teal {
+  background-color: transparent;
+  transition: 0.15s all linear;
+  border-radius: 0px; }
+  .btn-outline-white {
+    color: #F7FFF7;
+    border-color: #F7FFF7; }
+    .btn-outline-white:hover, .btn-outline-white:focus {
+      border-color: #211A1E;
+      background-color: #F7FFF7;
+      color: #211A1E; }
+  .btn-outline-teal {
+    color: #F7FFF7;
+    border-color: #38618C; }
+    .btn-outline-teal:hover, .btn-outline-teal:focus {
+      color: #F7FFF7;
+      border-color: #F7FFF7;
+      background-color: #38618C; }
+
+.btn-purple {
+  background: #6004BA;
+  color: #F7FFF7; }
+
+/*# sourceMappingURL=App.css.map */

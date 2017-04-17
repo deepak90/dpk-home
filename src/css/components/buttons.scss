@@ -1,0 +1,30 @@
+.btn-outline{
+    background-color: transparent;
+    transition: 0.15s all linear;
+    border-radius: 0px;
+    &-white {
+        @extend .btn-outline;
+        color: $white2;
+        border-color: $white2;
+        &:hover, &:focus{
+            border-color: $black2;
+            background-color: $white2;
+            color: $black2;
+        }
+    }
+    &-teal {
+        @extend .btn-outline;
+        color: $white2;
+        border-color: $teal;
+        &:hover, &:focus{
+            color: $white2;
+            border-color: $white2;
+            background-color: $teal;
+        }
+    }
+}
+
+.btn-purple {
+    background: $jet-header;
+    color: $white2;
+}

@@ -1,0 +1,14 @@
+.hero{
+    &-spacer {
+        background: $jet-purple;
+        background-image: url('../images/building2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: multiply;
+        color: $white2;
+        padding: 10px 0px;
+    }
+    &-title {
+        font-family: 'Pacifico', cursive;
+    }
+}

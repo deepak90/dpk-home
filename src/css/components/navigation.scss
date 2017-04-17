@@ -1,0 +1,14 @@
+.navbar {
+  margin-bottom: 0;
+  background: $jet-header;
+  border-radius: 0px;
+    a{
+      color: $white2;
+    }
+     li>a{
+     &:hover, &:focus{
+       background: $white2;
+        color: $black2;
+     }
+   }
+}

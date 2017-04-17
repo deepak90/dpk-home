@@ -1,0 +1,11 @@
+.thumbnail {
+    padding: 0;
+    border-radius: 0px;
+    transition: all 0.25s linear;
+    max-height: 300px;
+    overflow: hidden;
+    &:hover {
+        box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+    }
+
+}
