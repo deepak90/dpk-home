@@ -6,41 +6,57 @@ import Cards from './components/Cards';
 import Data from './data/data'
 import './css/App.css';
 
-let projects = Data.projects; 
-const hero = Data.projectsHero;
+const selectedTagsArray = [];
 
 class App extends Component {
-
-  filterCards(tag) {
-   console.log(tag)
+  constructor(props) {
+    super(props);
+    this.state = {
+      "projectsData": Data.projects,
+      "heroData": Data.projectsHero,
+      "selectedTags": ""
+    }
   }
-//   projects.filter((project) => {
-//  return project.tags.find((tagName) => {
-//         return tagName == "tag1"
-//     });
-// });
 
+  filterCards(tagName) {
+    selectedTagsArray.indexOf(tagName) === -1 ? selectedTagsArray.push(tagName) : selectedTagsArray.pop(tagName);
+
+    this.setState({
+      "selectedTags": selectedTagsArray
+    });
+    
+    let filteredProjects = this.state.projectsData.filter((project) => {
+      return project.tags.find((tag) => {
+        return tag === tagName;
+      });
+    });
+    this.setState({
+      "projectsData": filteredProjects
+    });
+  }
   render() {
+    let { projectsData, heroData } = this.state;
     return (
       <div className="App">
         <Nav />
-        <Hero 
-          title={hero.title}
-          description={hero.description} 
-          heroctatext={hero.ctaText} />
-          <Grid>
-            <Row>
-              <div className="card-container">
-                { /* TODO: change key to index */}
-                {projects.map(project => <Cards 
-                                            key={project.id} 
-                                            title={project.title} 
-                                            description={project.description} 
-                                            tags={project.tags}
-                                            filterCards={this.filterCards}/>)}
-              </div>
-            </Row>
-          </Grid>
+        <Hero
+          title={heroData.title}
+          description={heroData.description}
+          heroctatext={heroData.ctaText} />
+        <Grid>
+          <Row>
+            <div className="card-container">
+              { /* TODO: change key to index */}
+              {projectsData.map((project, index) =>
+                <Cards
+                  key={index}
+                  title={project.title}
+                  description={project.description}
+                  tags={project.tags}
+                  filterCards={this.filterCards.bind(this)} />)}
+            </div>
+          </Row>
+        </Grid>
       </div>
     );
   }
