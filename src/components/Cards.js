@@ -10,13 +10,12 @@ class Cards extends Component {
                 <Thumbnail src="http://placehold.it/300x200" alt="242x200">
                     <h3>{this.props.title}</h3>
                     <p>{this.props.description}</p>
-                    <ul className="tags">
-                        {this.props.tags.map(tag => <Tags
-                            key={tag}
-                            title={tag} 
-                            filterCards={this.props.filterCards}/>)}
-                    </ul>
-
+                        <ul className="tags">
+                            {this.props.tags.map(tag => <Tags
+                                key={tag}
+                                title={tag}
+                                filterCards={this.props.filterCards} />)}
+                        </ul>
                 </Thumbnail>
             </Col>
         );

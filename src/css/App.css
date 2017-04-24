@@ -104,4 +104,7 @@ body {
   background: #6004BA;
   color: #F7FFF7; }
 
+.filter-container button {
+  margin-left: 20px; }
+
 /*# sourceMappingURL=App.css.map */

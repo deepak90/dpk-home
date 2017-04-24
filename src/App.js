@@ -2,37 +2,41 @@ import React, { Component } from 'react';
 import { Grid, Row } from 'react-bootstrap';
 import Nav from './components/Navigation';
 import Hero from './components/Hero';
+import Filter from './components/Filter';
 import Cards from './components/Cards';
 import Data from './data/data'
 import './css/App.css';
-
-const selectedTagsArray = [];
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      "projectsData": Data.projects,
-      "heroData": Data.projectsHero,
-      "selectedTags": ""
+      projectsData: Data.projects,
+      heroData: Data.projectsHero,
+      selectedTags: ""
     }
   }
 
   filterCards(tagName) {
-    selectedTagsArray.indexOf(tagName) === -1 ? selectedTagsArray.push(tagName) : selectedTagsArray.pop(tagName);
-
     this.setState({
-      "selectedTags": selectedTagsArray
+      selectedTags: tagName
     });
-    
-    let filteredProjects = this.state.projectsData.filter((project) => {
+
+    let filteredProjects = Data.projects.filter((project) => {
       return project.tags.find((tag) => {
         return tag === tagName;
       });
     });
     this.setState({
-      "projectsData": filteredProjects
+      projectsData: filteredProjects
     });
+  }
+
+  resetCards() {
+    this.setState({
+      projectsData: Data.projects,
+      selectedTags:""
+    })
   }
   render() {
     let { projectsData, heroData } = this.state;
@@ -45,15 +49,27 @@ class App extends Component {
           heroctatext={heroData.ctaText} />
         <Grid>
           <Row>
+            {this.state.selectedTags.length ?
+              <div className="filter-container">
+                <Filter
+                  filter={this.state.selectedTags}
+                  resetCards={this.resetCards.bind(this)} />
+              </div>
+              :
+              ''
+            }
+          </Row>
+          <Row>
             <div className="card-container">
-              { /* TODO: change key to index */}
               {projectsData.map((project, index) =>
                 <Cards
                   key={index}
                   title={project.title}
                   description={project.description}
                   tags={project.tags}
-                  filterCards={this.filterCards.bind(this)} />)}
+                  filterCards={this.filterCards.bind(this)}
+                />)}
+
             </div>
           </Row>
         </Grid>
