@@ -75,8 +75,6 @@ class App extends Component {
                     filterCards={this.filterCards.bind(this)}
                   />)}
               </ReactCSSTransitionGroup>
-
-
             </div>
           </Row>
         </Grid>
