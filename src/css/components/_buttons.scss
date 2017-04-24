@@ -6,7 +6,7 @@
         @extend .btn-outline;
         color: $white2;
         border-color: $white2;
-        &:hover, &:focus{
+        &:hover, &:focus, &:active{
             border-color: $black2;
             background-color: $white2;
             color: $black2;
@@ -14,12 +14,12 @@
     }
     &-teal {
         @extend .btn-outline;
-        color: $white2;
-        border-color: $teal;
-        &:hover, &:focus{
+        color: $jet-purple;
+        border-color: $jet-purple;
+        &:hover, &:focus, &:active, &:target{
             color: $white2;
             border-color: $white2;
-            background-color: $teal;
+            background-color: $jet-purple;
         }
     }
 }

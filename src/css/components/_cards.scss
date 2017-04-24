@@ -9,6 +9,9 @@
     }
 
 }
+.card-container {
+    min-height: 640px;
+}
 .card-anim {
     &-enter {
         opacity: 0.01;

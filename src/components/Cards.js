@@ -7,7 +7,7 @@ class Cards extends Component {
     render() {
         return (
             <Col xs={12} sm={6} md={3}>
-                <Thumbnail src="http://placehold.it/300x200" alt="242x200">
+                <Thumbnail src="http://placehold.it/800x400" alt="242x200">
                     <h3>{this.props.title}</h3>
                     <p>{this.props.description}</p>
                         <ul className="tags">

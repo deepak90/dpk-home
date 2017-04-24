@@ -33,6 +33,9 @@ body {
   .thumbnail:hover {
     box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5); }
 
+.card-container {
+  min-height: 640px; }
+
 .card-anim-enter {
   opacity: 0.01; }
   .card-anim-enter-active {
@@ -99,17 +102,17 @@ body {
   .btn-outline-white {
     color: #F7FFF7;
     border-color: #F7FFF7; }
-    .btn-outline-white:hover, .btn-outline-white:focus {
+    .btn-outline-white:hover, .btn-outline-white:focus, .btn-outline-white:active {
       border-color: #211A1E;
       background-color: #F7FFF7;
       color: #211A1E; }
   .btn-outline-teal {
-    color: #F7FFF7;
-    border-color: #38618C; }
-    .btn-outline-teal:hover, .btn-outline-teal:focus {
+    color: #8200ff;
+    border-color: #8200ff; }
+    .btn-outline-teal:hover, .btn-outline-teal:focus, .btn-outline-teal:active, .btn-outline-teal:target {
       color: #F7FFF7;
       border-color: #F7FFF7;
-      background-color: #38618C; }
+      background-color: #8200ff; }
 
 .btn-purple {
   background: #6004BA;
