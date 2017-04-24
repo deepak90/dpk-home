@@ -33,6 +33,17 @@ body {
   .thumbnail:hover {
     box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5); }
 
+.card-anim-enter {
+  opacity: 0.01; }
+  .card-anim-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in; }
+.card-anim-leave {
+  opacity: 1; }
+  .card-anim-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in; }
+
 .tags {
   list-style: none;
   margin: 0;

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "react": "^15.5.4",
+    "react-addons-css-transition-group": "^15.5.2",
     "react-bootstrap": "^0.30.8",
     "react-dom": "^15.5.4"
   },

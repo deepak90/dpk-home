@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Filter from './components/Filter';
 import Cards from './components/Cards';
 import Data from './data/data'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './css/App.css';
 
 class App extends Component {
@@ -35,7 +36,7 @@ class App extends Component {
   resetCards() {
     this.setState({
       projectsData: Data.projects,
-      selectedTags:""
+      selectedTags: ""
     })
   }
   render() {
@@ -61,14 +62,20 @@ class App extends Component {
           </Row>
           <Row>
             <div className="card-container">
-              {projectsData.map((project, index) =>
-                <Cards
-                  key={index}
-                  title={project.title}
-                  description={project.description}
-                  tags={project.tags}
-                  filterCards={this.filterCards.bind(this)}
-                />)}
+              <ReactCSSTransitionGroup
+                transitionName="card-anim"
+                transitionEnterTimeout={500}
+                transitionLeaveTimeout={300}>
+                {projectsData.map((project, index) =>
+                  <Cards
+                    key={index}
+                    title={project.title}
+                    description={project.description}
+                    tags={project.tags}
+                    filterCards={this.filterCards.bind(this)}
+                  />)}
+              </ReactCSSTransitionGroup>
+
 
             </div>
           </Row>
