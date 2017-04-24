@@ -23,7 +23,7 @@ class App extends Component {
       selectedTags: tagName
     });
 
-    let filteredProjects = Data.projects.filter((project) => {
+    let filteredProjects = this.state.projectsData.filter((project) => {
       return project.tags.find((tag) => {
         return tag === tagName;
       });
@@ -50,15 +50,21 @@ class App extends Component {
           heroctatext={heroData.ctaText} />
         <Grid>
           <Row>
-            {this.state.selectedTags.length ?
-              <div className="filter-container">
-                <Filter
-                  filter={this.state.selectedTags}
-                  resetCards={this.resetCards.bind(this)} />
-              </div>
-              :
-              ''
-            }
+
+            <div className="filter-container">
+              <ReactCSSTransitionGroup
+                transitionName="card-anim"
+                transitionEnterTimeout={200}
+                transitionLeaveTimeout={200}>
+                {this.state.selectedTags.length ?
+                  <Filter
+                    filter={this.state.selectedTags}
+                    resetCards={this.resetCards.bind(this)} />
+                  :
+                  ''
+                }
+              </ReactCSSTransitionGroup>
+            </div>
           </Row>
           <Row>
             <div className="card-container">
