@@ -8,6 +8,7 @@ import Data from './data/data'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import './css/App.css';
 
+let selectedTagsArray = [];
 class App extends Component {
   constructor(props) {
     super(props);
@@ -19,8 +20,12 @@ class App extends Component {
   }
 
   filterCards(tagName) {
+    if (selectedTagsArray.indexOf(tagName) === -1) {
+      selectedTagsArray.push(tagName);
+    }
+    
     this.setState({
-      selectedTags: tagName
+      selectedTags: selectedTagsArray
     });
 
     let filteredProjects = this.state.projectsData.filter((project) => {
@@ -34,6 +39,7 @@ class App extends Component {
   }
 
   resetCards() {
+    selectedTagsArray = [];
     this.setState({
       projectsData: Data.projects,
       selectedTags: ""
@@ -70,7 +76,7 @@ class App extends Component {
             <div className="card-container">
               <ReactCSSTransitionGroup
                 transitionName="card-anim"
-                transitionEnterTimeout={500}
+                transitionEnterTimeout={400}
                 transitionLeaveTimeout={300}>
                 {projectsData.map((project, index) =>
                   <Cards
